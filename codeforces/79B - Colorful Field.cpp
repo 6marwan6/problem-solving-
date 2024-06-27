@@ -21,25 +21,24 @@ for(int i=0;i<test_C;i++){
 }
 
 for(int i=0;i<test_C;i++){
-        int count=0;
+        int count=0,waste_in_my_row=0;
         f_notwaste=0;
+        int c1=cases[i].first;
+        int c2=cases[i].second;
         for(int j=0;j<waste;j++)
-    if(wasteland[j].first==cases[i].first && wasteland[j].second==cases[i].second){
+    if(wasteland[j].first==c1 && wasteland[j].second==c2){
         cout<<"Waste"<<endl;
         f_notwaste=1;
-        if(wasteland[j].first==cases[i].first && wasteland[j].second<cases[i].second)waste_in_my_row++
-        break;
-    }
+         break;
+        }
+        else if(wasteland[j].first==c1 && wasteland[j].second<c2)waste_in_my_row++;
     if(f_notwaste==0){
-       for(int j=0;j<cases[i].first;j++) {
-            if(j!=cases[i].first-1)
+       for(int j=0;j<c1-1;j++) {
 count+=no_waste_row[j];
-else for(int s=0;s<cases[i].second;s++){
-    if(wasteland[i].first)
-}
+
        }
-if((cases[i].second+c*(cases[i].first-1)-count )%3==1)cout<<"Carrots"<<endl;
-    else if((cases[i].second+c*(cases[i].first-1)-count )%3==2)cout<<"Kiwis"<<endl;
+if((c2+c*(c1-1)-count-waste_in_my_row )%3==1)cout<<"Carrots"<<endl;
+    else if((c2+c*(c1-1)-count-waste_in_my_row )%3==2)cout<<"Kiwis"<<endl;
     else cout<<"Grapes"<<endl;
     }
 }

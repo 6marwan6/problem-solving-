@@ -15,7 +15,7 @@ while(dis_p<c){
     if(dis_p>=c)break;
     dis_d=dis_p;
     count++;
-    time_return=vd/dis_d + f;
+    time_return=dis_d/vd + f;
     dis_p+=time_return*vp;
 }
 cout<<count<<endl;
